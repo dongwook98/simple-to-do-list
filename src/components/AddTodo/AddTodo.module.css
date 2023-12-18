@@ -31,7 +31,11 @@
 }
 
 @media screen and (max-width: 768px) {
+  .input {
+    font-size: 1rem;
+  }
   .button {
+    font-size: 1rem;
     overflow: hidden;
     display: flex;
     justify-content: center;

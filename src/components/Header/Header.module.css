@@ -45,3 +45,9 @@
   margin-top: 0.2rem;
   border: 1px solid var(--color-text);
 }
+
+@media screen and (max-width: 768px) {
+  .filter {
+    font-size: 1rem;
+  }
+}
