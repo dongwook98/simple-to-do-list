@@ -29,3 +29,12 @@
 .button:hover {
   filter: brightness(125%);
 }
+
+@media screen and (max-width: 768px) {
+  .button {
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
