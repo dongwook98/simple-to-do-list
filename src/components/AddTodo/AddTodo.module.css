@@ -1,43 +1,39 @@
 .form {
-  width: 100%;
   display: flex;
   padding: 1.4rem 1rem;
-  background-color: var(--color-bg-dark);
+  border-top: 2px solid var(--color-secondary);
 }
 
 .input {
-  flex: 1 0 auto;
+  flex-grow: 1;
   font-size: 1.4rem;
   padding: 0.7rem 1rem;
   border: none;
   outline: none;
   border-top-left-radius: 8px;
   border-bottom-left-radius: 8px;
+  border: 1px solid var(--color-secondary);
+  border-right: none;
 }
 
 .button {
   cursor: pointer;
-  background-color: var(--color-accent);
+  background-color: var(--color-secondary);
   color: var(--color-white);
   font-weight: bold;
   font-size: 1.4rem;
   padding: 0 2rem;
   border-top-right-radius: 8px;
   border-bottom-right-radius: 8px;
+  text-wrap: nowrap;
 }
 
 .button:hover {
-  filter: brightness(125%);
+  filter: brightness(110%);
 }
 
-@media screen and (max-width: 768px) {
-  .input {
-    font-size: 1rem;
-  }
-  .button {
-    font-size: 1rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+@media screen and (max-width: 700px) {
+  input::placeholder {
+    color: transparent;
   }
 }

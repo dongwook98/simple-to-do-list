@@ -4,6 +4,7 @@ import styles from './AddTodo.module.css';
 
 export default function AddTodo({ onTodo }) {
   const [input, setInput] = useState('');
+
   const handleChange = (e) => {
     setInput(e.target.value);
   };
@@ -24,11 +25,11 @@ export default function AddTodo({ onTodo }) {
       <input
         className={styles.input}
         type='text'
-        placeholder='Add Todo'
+        placeholder='할 일을 추가해보세요.'
         value={input}
         onChange={handleChange}
       />
-      <button className={styles.button}>Add</button>
+      <button className={styles.button}>추가</button>
     </form>
   );
 }

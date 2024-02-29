@@ -2,27 +2,36 @@ import React from 'react';
 import styles from './Header.module.css';
 import { MdLightMode, MdDarkMode } from 'react-icons/md';
 import { useDarkMode } from '../../context/DarkModeContext';
+import { changeListKorean } from '../../utils/translation';
 
-export default function Header({ filters, filter, onFilterChange }) {
+export default function Header({
+  filters,
+  filter: selectedFilter,
+  onFilterChange,
+}) {
   const { darkMode, toggleDarkMode } = useDarkMode();
 
   return (
     <header className={styles.header}>
       <button onClick={toggleDarkMode} className={styles.toggle}>
-        {darkMode ? <MdDarkMode /> : <MdLightMode />}
+        {darkMode ? (
+          <MdDarkMode className={styles.darkMode} />
+        ) : (
+          <MdLightMode className={styles.lightMode} />
+        )}
       </button>
       <ul className={styles.filters}>
-        {filters.map((value, i) => (
-          <li key={i}>
+        {filters.map((filter, index) => (
+          <li key={index}>
             <button
               className={`${styles.filter} ${
-                filter === value && styles.selected
+                selectedFilter === filter && styles.selected
               } `}
               onClick={() => {
-                onFilterChange(value);
+                onFilterChange(filter);
               }}
             >
-              {value}
+              {changeListKorean(filter)}
             </button>
           </li>
         ))}
